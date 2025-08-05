@@ -42,6 +42,7 @@ c = null
 
 let d:undefined
 
+
 // function any():never{
 //     while(true){}
 // }
@@ -60,3 +61,68 @@ let d:undefined
 // annotation mean tell which types 
 // let a:number
 
+
+
+
+// Interfaces and type Aliases
+// Defining interfaces
+// Using interfaces to define Object shapes
+// Extending interfaces
+// intersection types
+
+
+// function usecase(a:number, b:string){
+    
+// }
+
+interface User{
+    name:string,
+    email:string,
+    password:string,
+    gender?:string
+}
+
+function getDataOFUser(obj:User){
+    
+}
+getDataOFUser({name:'Saad', email:'itmesaad@gmail.com', password:'123456'})
+
+
+interface Admin extends User{
+    admin:boolean
+}
+
+function admin(obj:Admin){
+    obj.admin
+}
+
+interface Abcd{
+    name:string
+}
+
+interface Abcd{
+    email:string
+}
+
+function acbs(obj:Abcd){
+    obj.name,
+    obj.email
+}
+
+// type saad = string;
+
+// let s:saad;
+
+type value = string | number | null
+
+let v:value
+
+type Users = {
+    name:string,
+    email:string
+}
+
+type Admins = Users & {
+    getDetails(user:string):void
+}
+function sddsvds(a:Admins){}

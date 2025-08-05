@@ -33,15 +33,16 @@ let c;
 c = 'Saad';
 c = null;
 let d;
-// function any():never{
-//     while(true){}
-// }
-// any()
-// console.log('hey')
-// types Inference 
-// Understanding type inference
-// Type annotations
-// automatically defined our tpye 
-// annotation mean tell which types 
-// let a:number
+function getDataOFUser(obj) {
+}
+getDataOFUser({ name: 'Saad', email: 'itmesaad@gmail.com', password: '123456' });
+function admin(obj) {
+    obj.admin;
+}
+function acbs(obj) {
+    obj.name,
+        obj.email;
+}
+let v;
+function sddsvds(a) { }
 //# sourceMappingURL=app.js.map
