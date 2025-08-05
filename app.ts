@@ -126,3 +126,39 @@ type Admins = Users & {
     getDetails(user:string):void
 }
 function sddsvds(a:Admins){}
+
+
+// Classes and objects
+// Class definition
+// Constructions
+// Access modifiers ( public, private, protected)
+// Readonly properties
+// Optional properties
+// Getters and setters
+// Static members
+// Abstract classes and methods
+
+class Device{
+    name = 'laptop';
+    price = 100000;
+    category = 'digital'
+}
+
+let d1 = new Device()
+let d2 = new Device()
+
+class Bottle{
+    radius = 120;
+    price = 100;
+    color = 'white'
+}
+
+let b1 = new Bottle()
+
+class BottleMarker{
+    constructor(public name:string, public price:number){
+
+    }
+}
+
+let b3 = new BottleMarker('Natural', 500)

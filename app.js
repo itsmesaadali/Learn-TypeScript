@@ -5,7 +5,7 @@
 // Tuples 
 // Enumes
 // any, unknown, void, null, undefined, Never
-Object.defineProperty(exports, "__esModule", { value: true });
+// Object.defineProperty(exports, "__esModule", { value: true });
 let arr = [1, 2, 3, 4,];
 let a = ['Saad', 21];
 let b;
@@ -45,4 +45,26 @@ function acbs(obj) {
 }
 let v;
 function sddsvds(a) { }
+// Classes and objects
+// Class definition
+// Constructions
+// Access modifiers ( public, private, protected)
+// Readonly properties
+// Optional properties
+// Getters and setters
+// Static members
+// Abstract classes and methods
+class Device {
+    name = 'laptop';
+    price = 100000;
+    category = 'digital';
+}
+let d1 = new Device();
+let d2 = new Device();
+class Bottle {
+    radius = 120;
+    price = 100;
+    color = 'white';
+}
+let b1 = new Bottle();
 //# sourceMappingURL=app.js.map
