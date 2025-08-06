@@ -254,5 +254,62 @@ class Payment{
 }
 
 class Paytm extends Payment{
-  
+
 }
+
+// Functions
+// Funtion types
+// Optional and default parameters
+// Rest parameters
+// Overloads
+
+function aaa(name:string, cb: (value:string)=>void){
+
+}
+
+aaa('Saad', (value:string)=>{
+  console.log(value)
+})
+
+// rest and spread operator 
+
+function abs(...args:number[]){
+
+}
+abs(1,2,3,4,5,6)
+
+function sum(...arr:number[]){
+  console.log(arr)
+}
+
+sum(1,2,3,4,5,6,7,8,9,10)
+
+function friends(...arr:string[]){
+  console.log(arr)
+}
+
+friends('Saad', 'ALi')
+
+var arr1 = [1,2,3,4]
+var arr2 = [...arr1]
+
+
+// ts function signature
+
+function fun(a:string):void
+function fun(a:string,b:number):number
+
+
+function fun(a:any,b?:any){
+  if(typeof a === 'string' && typeof b === undefined) {
+    console.log('hey');
+  }
+  if(typeof a === 'string' && typeof b === 'number'){
+    return 123;
+  }
+  else throw new Error('something is wrong')
+
+}
+
+fun('Saad', 21)
+fun('Saad')
