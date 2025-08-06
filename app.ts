@@ -204,9 +204,33 @@ class Abcd {
 // let u1 = new User1('Saad')
 // u1.changeName()
 
+// class User1{
+//   constructor(public name:string, public age:number, public gender?:string){}
+// }
+
+// let u1= new User1('Saad', 21, 'Male')
+// let u2= new User1('Fahad', 20)
+
+
 class User1{
-  constructor(public name:string, public age:number, public gender?:string){}
+  constructor(public _name:string, public age:number){}
+
+  get name(){
+    return this._name
+  }
+
+  set name(newVal:string){
+    this._name = newVal
+  }
+  // getName(){
+  //   return this.name;
+  // }
+
+  // setName(newVal:string){
+  //   this.name = newVal;
+  // }
 }
 
-let u1= new User1('Saad', 21, 'Male')
-let u2= new User1('Fahad', 20)
+let u1 = new User1('Saad', 23)
+// u1.getName()
+// u1.setName('Fahad')
