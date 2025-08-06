@@ -159,3 +159,54 @@ class Abcd {
     console.log(this.name);
   }
 }
+
+
+// class Bottle1{
+//   private age:number = 21;
+//   constructor(public name:string){}
+// }
+
+// class MetalBottleMaker extends Bottle1{
+//   constructor(name:string) {
+//     super(name)
+//   } 
+
+//   getValue(){
+//     console.log(this.name, this.age)
+//   }
+// }
+
+// let b4 = new MetalBottleMaker('Natural')
+
+// class BottleMaker {
+//   protected name = 'natural'
+// }
+
+// class MetalBottleMaker extends BottleMaker{
+//   public material = 'metal'
+
+//   changeName(){
+//     this.name = 'some other name'
+//   }
+// }
+
+// let b4 = new MetalBottleMaker()
+
+
+// class User1{
+//   constructor(public readonly name:string){}
+
+//   changeName(){
+//     this.name = 'other'
+//   }
+// }
+
+// let u1 = new User1('Saad')
+// u1.changeName()
+
+class User1{
+  constructor(public name:string, public age:number, public gender?:string){}
+}
+
+let u1= new User1('Saad', 21, 'Male')
+let u2= new User1('Fahad', 20)
