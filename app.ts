@@ -234,3 +234,25 @@ class User1{
 let u1 = new User1('Saad', 23)
 // u1.getName()
 // u1.setName('Fahad')
+
+
+class Hero{
+  static version = 1.0;
+
+   static getRandomNo(){
+    return Math.random()
+  }
+}
+
+
+class Payment{
+  constructor(protected amount:number, protected account:number){}
+
+  isPaymentValid(amount:number){
+    return this.amount > 0;
+  }
+}
+
+class Paytm extends Payment{
+  
+}
