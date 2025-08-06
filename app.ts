@@ -313,3 +313,50 @@ function fun(a:any,b?:any){
 
 fun('Saad', 21)
 fun('Saad')
+
+// Generics
+// Generic functions
+// Generic interfaces
+// Generic classes
+
+
+function logger<T>(a:T){
+  console.log(a)  
+}
+
+logger<string>('hey')
+logger<number>(12)
+logger<boolean>(true)
+
+
+function log<H>(a:H, b:string, c:number){
+  console.log(`My name is ${a}${b} and my age is ${c}`)
+}
+
+log<string>('Saad', 'Ali', 21)
+
+interface Halua<T>{
+  name :string;
+  age:number;
+  key:T
+}
+
+function gg(obj:Halua<string>){
+  console.log(obj.key)
+}
+
+gg({name:'foo', age:25, key: "123456"})
+
+class Maker<T>{
+  constructor(public key:T){}
+}
+
+let m1 = new Maker<string>('hey') 
+
+
+function non<T>(a:T,b:T):T{
+  return 'Hey' as T
+  // return <T>'Hey' 
+}
+
+non<string>('hey', 'hello')
