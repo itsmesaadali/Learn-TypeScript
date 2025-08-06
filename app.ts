@@ -160,7 +160,6 @@ class Abcd {
   }
 }
 
-
 // class Bottle1{
 //   private age:number = 21;
 //   constructor(public name:string){}
@@ -169,7 +168,7 @@ class Abcd {
 // class MetalBottleMaker extends Bottle1{
 //   constructor(name:string) {
 //     super(name)
-//   } 
+//   }
 
 //   getValue(){
 //     console.log(this.name, this.age)
@@ -192,7 +191,6 @@ class Abcd {
 
 // let b4 = new MetalBottleMaker()
 
-
 // class User1{
 //   constructor(public readonly name:string){}
 
@@ -211,16 +209,15 @@ class Abcd {
 // let u1= new User1('Saad', 21, 'Male')
 // let u2= new User1('Fahad', 20)
 
+class User1 {
+  constructor(public _name: string, public age: number) {}
 
-class User1{
-  constructor(public _name:string, public age:number){}
-
-  get name(){
-    return this._name
+  get name() {
+    return this._name;
   }
 
-  set name(newVal:string){
-    this._name = newVal
+  set name(newVal: string) {
+    this._name = newVal;
   }
   // getName(){
   //   return this.name;
@@ -231,31 +228,27 @@ class User1{
   // }
 }
 
-let u1 = new User1('Saad', 23)
+let u1 = new User1("Saad", 23);
 // u1.getName()
 // u1.setName('Fahad')
 
-
-class Hero{
+class Hero {
   static version = 1.0;
 
-   static getRandomNo(){
-    return Math.random()
+  static getRandomNo() {
+    return Math.random();
   }
 }
 
+class Payment {
+  constructor(protected amount: number, protected account: number) {}
 
-class Payment{
-  constructor(protected amount:number, protected account:number){}
-
-  isPaymentValid(amount:number){
+  isPaymentValid(amount: number) {
     return this.amount > 0;
   }
 }
 
-class Paytm extends Payment{
-
-}
+class Paytm extends Payment {}
 
 // Functions
 // Funtion types
@@ -263,100 +256,143 @@ class Paytm extends Payment{
 // Rest parameters
 // Overloads
 
-function aaa(name:string, cb: (value:string)=>void){
+function aaa(name: string, cb: (value: string) => void) {}
 
+aaa("Saad", (value: string) => {
+  console.log(value);
+});
+
+// rest and spread operator
+
+function abs(...args: number[]) {}
+abs(1, 2, 3, 4, 5, 6);
+
+function sum(...arr: number[]) {
+  console.log(arr);
 }
 
-aaa('Saad', (value:string)=>{
-  console.log(value)
-})
+sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-// rest and spread operator 
-
-function abs(...args:number[]){
-
-}
-abs(1,2,3,4,5,6)
-
-function sum(...arr:number[]){
-  console.log(arr)
+function friends(...arr: string[]) {
+  console.log(arr);
 }
 
-sum(1,2,3,4,5,6,7,8,9,10)
+friends("Saad", "ALi");
 
-function friends(...arr:string[]){
-  console.log(arr)
-}
-
-friends('Saad', 'ALi')
-
-var arr1 = [1,2,3,4]
-var arr2 = [...arr1]
-
+var arr1 = [1, 2, 3, 4];
+var arr2 = [...arr1];
 
 // ts function signature
 
-function fun(a:string):void
-function fun(a:string,b:number):number
+function fun(a: string): void;
+function fun(a: string, b: number): number;
 
-
-function fun(a:any,b?:any){
-  if(typeof a === 'string' && typeof b === undefined) {
-    console.log('hey');
+function fun(a: any, b?: any) {
+  if (typeof a === "string" && typeof b === undefined) {
+    console.log("hey");
   }
-  if(typeof a === 'string' && typeof b === 'number'){
+  if (typeof a === "string" && typeof b === "number") {
     return 123;
-  }
-  else throw new Error('something is wrong')
-
+  } else throw new Error("something is wrong");
 }
 
-fun('Saad', 21)
-fun('Saad')
+fun("Saad", 21);
+fun("Saad");
 
 // Generics
 // Generic functions
 // Generic interfaces
 // Generic classes
 
-
-function logger<T>(a:T){
-  console.log(a)  
+function logger<T>(a: T) {
+  console.log(a);
 }
 
-logger<string>('hey')
-logger<number>(12)
-logger<boolean>(true)
+logger<string>("hey");
+logger<number>(12);
+logger<boolean>(true);
 
-
-function log<H>(a:H, b:string, c:number){
-  console.log(`My name is ${a}${b} and my age is ${c}`)
+function log<H>(a: H, b: string, c: number) {
+  console.log(`My name is ${a}${b} and my age is ${c}`);
 }
 
-log<string>('Saad', 'Ali', 21)
+log<string>("Saad", "Ali", 21);
 
-interface Halua<T>{
-  name :string;
-  age:number;
-  key:T
+interface Halua<T> {
+  name: string;
+  age: number;
+  key: T;
 }
 
-function gg(obj:Halua<string>){
-  console.log(obj.key)
+function gg(obj: Halua<string>) {
+  console.log(obj.key);
 }
 
-gg({name:'foo', age:25, key: "123456"})
+gg({ name: "foo", age: 25, key: "123456" });
 
-class Maker<T>{
-  constructor(public key:T){}
+class Maker<T> {
+  constructor(public key: T) {}
 }
 
-let m1 = new Maker<string>('hey') 
+let m1 = new Maker<string>("hey");
 
-
-function non<T>(a:T,b:T):T{
-  return 'Hey' as T
-  // return <T>'Hey' 
+function non<T>(a: T, b: T): T {
+  return "Hey" as T;
+  // return <T>'Hey'
 }
 
-non<string>('hey', 'hello')
+non<string>("hey", "hello");
+
+// Type Assertion
+// Type Casting
+// Non-null assertion operator
+
+let hi: any = 12;
+
+<number>hi;
+
+let r: null | undefined | string;
+r = "hey";
+r!;
+
+// Type Guards and typescript utility Types
+// using typeof and instanceof
+// Partial , Required, Readonly
+
+function t(arg: number | string) {
+  if (typeof arg === "string") {
+    return "string";
+  } else if (typeof arg === "number") {
+    return "number";
+  } else {
+    throw new Error("Some went wrong");
+  }
+}
+
+t(12);
+t("Hey");
+
+class Remote {
+  switchTvOff() {
+    console.log("switching off");
+  }
+}
+
+class CarRemote extends Remote {
+  switchCarOff() {
+    console.log("switching off");
+  }
+}
+
+const tv = new Remote();
+const car = new CarRemote();
+
+function switchOffKaro(device: Remote | CarRemote) {
+  if (device instanceof Remote) {
+    device.switchTvOff();
+  } else if (device instanceof CarRemote) {
+    device.switchCarOff();
+  }
+}
+
+switchOffKaro();
