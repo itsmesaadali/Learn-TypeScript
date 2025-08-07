@@ -10,7 +10,7 @@
 
 class User {
 
-    private _courseCount = 1
+    protected _courseCount = 1
 
     readonly city:string = 'ISB'
     constructor(
@@ -39,6 +39,13 @@ class User {
     }
 }
 
+
+class SubUser extends User {
+    isFamily:boolean = true
+    changeCourseCount() {
+        this._courseCount = 4
+    }
+}
 
 const saad = new User('itmesaad@gmail.com', 'Saad')
 // saad.name 
